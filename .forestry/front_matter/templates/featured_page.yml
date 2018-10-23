@@ -1,0 +1,13 @@
+---
+label: Featured Page Section
+is_partial: true
+fields:
+  - type: text
+    name: section_id
+    label: Element ID
+  - type: text
+    name: component
+    hidden: true
+    default: featured_page.html
+    config:
+      required: true

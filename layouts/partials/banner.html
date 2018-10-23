@@ -1,0 +1,14 @@
+<!-- Banner -->
+<section id="{{ .Params.banner.section_id }}">
+    <div class="inner">
+        {{ partial "markdownify-block" .Params.banner.subtitle }}
+        <h1>{{ .Params.banner.title }}</h1>
+        {{ if .Params.banner.actions }}
+            <ul class="actions special">
+                {{ range $action := .Params.banner.actions }}
+                    <li><a href="{{ if strings.HasPrefix $action.url "#" }}{{ $action.url }}{{ else }}{{ relref $ $action.url | relURL }}{{ end }}" class="button large{{ cond $action.is_primary " primary" nil }}{{ cond $action.is_scrolly " scrolly" nil }}">{{ $action.label }}</a></li>
+                {{ end }}
+            </ul>
+        {{ end }}
+    </div>
+</section>

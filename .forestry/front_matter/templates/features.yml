@@ -1,0 +1,41 @@
+---
+label: Features Section
+is_partial: true
+fields:
+  - type: text
+    name: section_id
+    label: Element ID
+  - type: select
+    name: background_style
+    label: The background style of the section
+    config:
+      required: true
+      source:
+        type: custom
+      options:
+        - style1
+        - style2
+  - type: field_group_list
+    name: features
+    label: The list of features
+    config:
+      labelField: title
+    fields:
+      - type: text
+        name: title
+        label: Title
+        description: The feature title
+      - type: text
+        name: text
+        label: Text
+        description: The feature description
+      - type: text
+        name: icon
+        label: Icon
+        description: Font Awesome Icons
+  - type: text
+    name: component
+    hidden: true
+    default: features.html
+    config:
+      required: true

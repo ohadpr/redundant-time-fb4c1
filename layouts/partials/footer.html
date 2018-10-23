@@ -1,0 +1,9 @@
+<!-- Footer -->
+<footer id="{{ .Site.Params.footer.section_id }}">
+    {{ if .Site.Params.contact }}
+        {{ partial "contact.html" . }}
+    {{ end }}
+    <div class="copyright">
+        {{ .Site.Params.footer.copyright | safeHTML }}
+    </div>
+</footer>

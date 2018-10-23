@@ -1,0 +1,41 @@
+title: Atmosphere
+baseURL: /
+params:
+  menu:
+    buttons:
+      - label: Log In
+        url: generic.md
+      - label: Sign Up
+        url: generic.md
+  contact:
+    social_icons:
+      - title: Address
+        text: |-
+          1234 Fictional Avenue
+          Nashville, TN 00000
+        icon: fa-home
+      - title: Phone
+        text: (000) 000-0000
+        icon: fa-phone
+      - title: Email
+        text: information@untitled.tld
+        icon: fa-envelope
+  footer:
+    section_id: footer
+    copyright: '&copy; Untitled. All rights reserved.'
+  palette: blue
+  palettes:
+    blue:
+      sass:
+        bg_alt: '#472e68'
+        accent1: '#00a6d9'
+    green:
+      sass:
+        bg_alt: '#2b5a96'
+        accent1: '#39a288'
+    red:
+      sass:
+        bg_alt: '#403f87'
+        accent1: '#b7475a'
+disableKinds:
+  - RSS

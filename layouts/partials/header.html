@@ -1,0 +1,21 @@
+<!-- Header -->
+<header id="header"{{ if eq .Params.layout "home" }} class="alt"{{ end }}>
+    <span class="logo"><a href="{{ .Site.BaseURL | relURL }}">{{ .Site.Title }}</a></span>
+    <a href="#menu">Menu</a>
+</header>
+
+<!-- Nav -->
+<nav id="menu">
+    <div class="inner">
+        <h2>Menu</h2>
+        <ul class="links">
+            {{ range $item := .Site.Menus.main }}
+                <li><a href="{{ $item.URL | relURL }}">{{ $item.Name }}</a></li>
+            {{ end }}
+            {{ range $action := .Site.Params.menu.buttons }}
+                <li><a href="{{ relref $ $action.url | relURL }}">{{ $action.label }}</a></li>
+            {{ end }}
+        </ul>
+        <a class="close">Close</a>
+    </div>
+</nav>

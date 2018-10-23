@@ -1,0 +1,80 @@
+---
+label: Config
+hide_body: true
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Title
+    description: Site title
+    config:
+      required: true
+  - type: field_group
+    name: params
+    label: Params
+    description: Site parameters
+    fields:
+      - type: field_group
+        name: menu
+        label: Menu Configuration
+        fields:
+          - type: field_group_list
+            name: buttons
+            label: Buttons
+            description: The menu buttons
+            config:
+              labelField: label
+            fields:
+              - type: text
+                name: label
+                label: Button Label
+              - type: text
+                name: url
+                label: Button URL
+      - type: field_group
+        name: contact
+        label: Contact Configuration
+        fields:
+          - type: field_group_list
+            name: social_icons
+            label: Social Icons
+            description: Contact methods
+            config:
+              labelField: title
+            fields:
+              - type: text
+                name: title
+                label: Title
+                description: The name of the contact method
+              - type: textarea
+                name: text
+                label: Contact Description
+                description: The contact method description
+              - type: text
+                name: icon
+                label: Icon
+                description: Font Awesome Icons
+      - type: field_group
+        name: footer
+        label: Footer Configuration
+        fields:
+          - type: text
+            name: section_id
+            label: Section ID
+            hidden: true
+            default: footer
+            config:
+              required: true
+          - type: text
+            name: copyright
+            label: Footer Copyright
+      - type: select
+        name: palette
+        label: Color Palette
+        config:
+          source:
+            type: custom
+          options:
+            - blue
+            - green
+            - red

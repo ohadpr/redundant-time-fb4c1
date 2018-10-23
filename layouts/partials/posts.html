@@ -1,0 +1,29 @@
+<!-- Four -->
+<section id="{{ .section.section_id }}" class="wrapper {{ .section.background_style }} alt">
+    <div class="inner">
+        <header class="major">
+            <p>{{ .section.subtitle }}</p>
+            <h2>{{ .section.title }}</h2>
+        </header>
+        <section class="timeline">
+            {{ $display_posts := (.Site.GetPage "section" "posts").Pages | first .section.num_posts_displayed }}
+            {{ range $post := $display_posts.ByDate.Reverse }}
+                <section>
+                    <header>
+                        <p>{{ $post.Date | dateFormat "01.02.06" }}</p>
+                        <h4>{{ $post.Title }}</h4>
+                    </header>
+                    {{ if $post.Params.alt_img_path }}
+                        <span class="image"><img src="{{ $post.Params.alt_img_path | relURL }}" alt=""></span>
+                    {{ end }}
+                    <div class="content">
+                        <p>{{ $post.Params.excerpt }}</p>
+                        <ul class="actions">
+                            <li><a href="{{ $post.URL }}" class="button">More</a></li>
+                        </ul>
+                    </div>
+                </section>
+            {{ end }}
+        </section>
+    </div>
+</section>

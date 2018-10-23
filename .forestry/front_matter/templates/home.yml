@@ -1,0 +1,30 @@
+---
+label: Home
+hide_body: true
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Title
+    description: The title of the page
+    config:
+      required: true
+  - type: field_group
+    name: banner
+    label: Banner
+    fields:
+      - type: include
+        name: include_banner
+        label: Banner
+        template: banner
+  - type: blocks
+    name: sections
+    label: Sections
+    description: Home sections
+    template_types:
+      - spotlight
+      - features
+      - featured_page
+      - posts
+pages:
+  - _index.md

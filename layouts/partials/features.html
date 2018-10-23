@@ -1,0 +1,14 @@
+<!-- Two -->
+<section id="{{ .section.section_id }}" class="wrapper {{ .section.background_style }} special">
+    <div class="inner">
+        <ul class="features">
+            {{ range $feature := .section.features }}
+                <li>
+                    <span class="icon major {{ $feature.icon }}"></span>
+                    <h4>{{ $feature.title }}</h4>
+                    <p>{{ $feature.text }}</p>
+                </li>
+            {{ end }}
+        </ul>
+    </div>
+</section>

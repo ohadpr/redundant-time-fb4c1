@@ -1,0 +1,19 @@
+<!-- One -->
+<section id="{{ .section.section_id }}" class="wrapper {{ .section.background_style }}">
+    <div class="inner">
+        <section class="spotlights">
+            {{ range $page := (where (where (.Site.GetPage "section" "").Pages "Params.home_sections" "!=" nil) "Params.home_sections.spotlight" "!=" nil).ByParam "home_sections.spotlight.weight" }}
+                <article>
+                    <header class="major">
+                        {{ partial "markdownify-block" $page.Params.subtitle }}
+                        <h2>{{ $page.Title }}</h2>
+                    </header>
+                    <p>{{ $page.Params.home_sections.spotlight.excerpt }}</p>
+                    <ul class="actions">
+                        <li><a href="{{ $page.URL }}" class="button">More</a></li>
+                    </ul>
+                </article>
+            {{ end }}
+        </section>
+    </div>
+</section>

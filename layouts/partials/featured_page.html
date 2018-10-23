@@ -1,0 +1,24 @@
+<!-- Three -->
+<section id="{{ .section.section_id }}" class="wrapper {{ .section.background_style }}">
+    {{ range $page := (where (where (.Site.GetPage "section" "").Pages "Params.home_sections" "!=" nil) "Params.home_sections.featured_page" "!=" nil).ByParam "home_sections.featured_page.weight" }}
+        <div class="inner">
+            <header class="major alt">
+                {{ partial "markdownify-block" $page.Params.subtitle }}
+                <h2>{{ $page.Title }}</h2>
+            </header>
+            <section class="posts">
+                <article>
+                    {{ if $page.Params.home_sections.featured_page.home_img_path }}
+                        <span class="image"><img src="{{ $page.Params.home_sections.featured_page.home_img_path | relURL }}" alt=""></span>
+                    {{ end }}
+                    <div class="content">
+                        <p>{{ $page.Params.home_sections.featured_page.excerpt }}</p>
+                        <ul class="actions">
+                            <li><a href="{{ $page.URL }}" class="button">More</a></li>
+                        </ul>
+                    </div>
+                </article>
+            </section>
+        </div>
+    {{ end }}
+</section>

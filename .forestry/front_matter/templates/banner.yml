@@ -1,0 +1,29 @@
+---
+label: Banner
+is_partial: true
+fields:
+  - type: text
+    name: section_id
+    label: Element ID
+    description: The element id of the banner element
+  - type: text
+    name: title
+    label: Title
+  - type: textarea
+    name: subtitle
+    label: Subtitle
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+  - type: field_group_list
+    name: actions
+    label: Action Buttons
+    description: List of action buttons
+    config:
+      labelField: label
+    fields:
+      - type: include
+        name: include_action
+        label: Action
+        template: action

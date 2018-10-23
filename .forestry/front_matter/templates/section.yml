@@ -1,0 +1,12 @@
+---
+label: Section
+is_partial: true
+fields:
+  - type: text
+    name: section_id
+    label: Element ID
+  - type: text
+    name: component
+    hidden: true
+    config:
+      required: true

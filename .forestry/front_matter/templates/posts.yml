@@ -1,0 +1,36 @@
+---
+label: Posts Section
+is_partial: true
+fields:
+  - type: text
+    name: section_id
+    label: Element ID
+  - type: text
+    name: title
+    label: Title
+    description: The section title
+  - type: text
+    name: subtitle
+    label: Subtitle
+    description: The small text above the section title
+  - type: select
+    name: background_style
+    label: The background style of the section
+    config:
+      required: true
+      source:
+        type: custom
+      options:
+        - style1
+        - style2
+  - type: number
+    name: num_posts_displayed
+    label: Number of displayed posts
+    config:
+      required: true
+  - type: text
+    name: component
+    hidden: true
+    default: posts.html
+    config:
+      required: true

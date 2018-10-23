@@ -1,0 +1,77 @@
+---
+label: Post
+is_partial: false
+fields:
+  - type: text
+    name: title
+    label: Title
+    description: The title of the page
+    config:
+      required: true
+  - type: textarea
+    name: subtitle
+    label: Subtitle
+    description: Text that is shown just above the title
+    config:
+      wysiwyg: true
+      schema:
+        format: markdown
+  - type: file
+    name: content_img_path
+    label: Image
+    description: The image shown on top of the page
+  - type: field_group
+    name: home_sections
+    label: Home Sections
+    fields:
+      - type: field_group
+        name: spotlight
+        fields:
+          - type: number
+            name: weight
+            label: Weight
+            description: The order of the page inside home spotlight section
+          - type: textarea
+            name: excerpt
+            label: Excerpt
+            description: whatever
+      - type: field_group
+        name: featured_page
+        label: Featured Page
+        fields:
+          - type: number
+            name: weight
+            label: Weight
+            description: The order of the page inside home spotlight section
+          - type: textarea
+            name: excerpt
+            label: Excerpt
+            description: whatever
+          - type: file
+            name: home_img_path
+            label: Image
+            description: Image shown in featured page list
+  - type: text
+    name: template
+    label: Template
+    hidden: true
+    default: page
+    config:
+      required: true
+  - type: text
+    name: excerpt
+    label: Home Excerpt
+    description: Excerpt to be displayed in any thumbnails for the post
+  - type: datetime
+    name: date
+    label: Date
+    config:
+      required: true
+  - type: file
+    name: alt_img_path
+    label: Alternate Image
+    description: image to be displayed in any thumbnails for the post
+pages:
+  - posts/magna.md
+  - posts/sed.md
+  - posts/tellus.md
